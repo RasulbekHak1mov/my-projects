@@ -4,7 +4,14 @@ form.addEventListener('submit', e => {
 
 	let name = document.querySelector('#name').value;
 	let message = document.querySelector('#message').value;
-	let my_text = `${name}- dan xabar keldi!%0A%0AKELGAN XABAR: ${message}%0A%0ASiz ham xabar yozishni hohlasangiz bu saytga kiring:%0Ahttps://hak1mov.netlify.app/responser/ o'zim yaratganman`
+
+	// Check if name and message fields are not empty
+	if (name.trim() === '' || message.trim() === '') {
+		alert(`NIMADIR BO'SH QOLDIRILDI!`);
+		return;
+	}
+
+	let my_text = `${name} - dan xabar keldi!%0A%0AKELGAN XABAR: ${message}%0A%0ASiz ham xabar yozishni hohlasangiz bu saytga kiring:%0Ahttps://hak1mov.netlify.app/responser/ o'zim yaratganman!%0A%0AXABAR YETIB KELISH TEZLIGI: 1soniya!`;
 	let bot = {
 		token: '6149186372:AAGaH0Z4sujPOZ-ehPPlMYRfccNE4G0j264',
 		chat_id: -1001256357850,
@@ -28,4 +35,4 @@ form.addEventListener('submit', e => {
 			console.log(error);
 			alert('Xabaringiz yuborilmadi!');
 		});
-}); 
+});
